@@ -15,100 +15,80 @@
         android:layout_height="match_parent"
         android:padding="10dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            tools:context=".MainActivity">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="0dp"
-                android:layout_height="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Saisie des Informations d'un nouveau Rendez-Vous"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/lieuRv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.060000002"
-                app:layout_constraintVertical_chainStyle="spread" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/rvId"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:enabled="false"
                 android:hint="Id du rendez-Vous"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="@{unRv.idRv}"
-                app:layout_constraintBottom_toTopOf="@+id/descriptionRv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="0.17000002" />
+                android:text="@{unRv.idRv}" />
 
             <EditText
                 android:id="@+id/lieuRv"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:hint="Lieu du rendez-Vous"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
-                android:text="@{unRv.lieuRv}"
-                app:layout_constraintBottom_toTopOf="@+id/descriptionRv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rvId" />
+                android:text="@{unRv.lieuRv}" />
 
             <EditText
                 android:id="@+id/descriptionRv"
-                android:layout_width="0dp"
-                android:layout_height="154dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_margin="5dp"
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="Description du rendez-Vous"
                 android:inputType="textMultiLine"
-                android:text="@{unRv.descriptionRv}"
-                app:layout_constraintBottom_toTopOf="@+id/dateRv"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lieuRv" />
+                android:text="@{unRv.descriptionRv}" />
 
             <DatePicker
                 android:id="@+id/dateRv"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:calendarViewShown="false"
-                android:datePickerMode="spinner"
-                app:layout_constraintBottom_toTopOf="@+id/button1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionRv" />
+                android:datePickerMode="spinner" />
 
             <Button
                 android:id="@+id/button1"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="Enregister le rendez-vous"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/dateRv" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                android:text="Enregister le rendez-vous" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+        </LinearLayout>
     </ScrollView>
 </layout>
