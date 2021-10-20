@@ -1,6 +1,5 @@
 package sn.set.exemples.databinding
 
-import androidx.compose.ui.tooling.preview.datasource.LoremIpsum
 import java.util.*
 
 data class RendezVous(

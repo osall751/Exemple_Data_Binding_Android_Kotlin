@@ -2,8 +2,6 @@ package sn.set.exemples.databinding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import sn.set.exemples.databinding.databinding.ActivityMainBinding
 import java.util.*
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         recyclerview.adapter = adapter
 
         binding.button1.setOnClickListener {
-            var rv: RendezVous = RendezVous(
+            val rv = RendezVous(
                 binding.rvId.text.toString(),
                 binding.lieuRv.text.toString(),
                 binding.descriptionRv.text.toString(),
@@ -48,9 +46,9 @@ class MainActivity : AppCompatActivity() {
             )
             binding.unRv = rv
             data.add(rv)
-            binding.unRv = RendezVous(UUID.randomUUID().toString());
-            recyclerview.invalidate();
-            recyclerview.requestLayout();
+            binding.unRv = RendezVous(UUID.randomUUID().toString())
+            recyclerview.invalidate()
+            recyclerview.requestLayout()
         }
     }
 }
